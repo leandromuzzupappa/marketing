@@ -71,6 +71,7 @@ a {
 .header__linkMenu a,
 .header__menu a {
     color: var(--gray2);
+    transition: all .2s;
 }
 
 .header__linkMenu a,
@@ -81,6 +82,31 @@ a {
 
 .header__menu {
     margin-left: 2rem;
+}
+
+.header__menu a {
+    position: relative;
+    padding: .2rem .5rem;
+    transition: all .2s;
+}
+.header__menu a::before {
+    content: '';
+    position: absolute;
+    bottom: -.5rem;
+    left: 0;
+    width: 100%;
+    height: .15rem;
+    border-radius: .1rem;
+    background: var(--primary);
+    opacity: 0;
+    transition: all .2s;
+}
+.header__menu a:hover {
+    color: var(--primary);
+}
+.header__menu a:hover::before {
+    opacity: 1;
+    bottom: -.3rem;
 }
 
 .header__linkMenu svg {
@@ -100,36 +126,46 @@ a {
 }
 
 .menuMobile__btn {
-    display: none;
     position: relative;
+    width: 24px;
+    height: 24px;
+
 }
 
-.menuMobile__btn svg {
-    border: 1px solid green;
-    width: 30px;
-    height: 30px;
-}
-.menuMobile__btn g{
-    width: 30px;
-    height: 30px;
-}
-
-.menuMobile__btn svg .a {
+.menuMobile__btn span {
     position: absolute;
-    transition: all .4s;
-    stroke: red;
     top: 50%;
     left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--primary);
+    transform: translate(0, -50%);
+    transform-origin: center center;
+    border-radius: 3px;
+    transition: all .2s;
 }
 
-.menuMobile__btn.menuMobile__btn--open svg .a.top {
-    top: 0;
+.menuMobile__btn span:nth-child(1) {
+    top: 20%;
 }
-.menuMobile__btn.menuMobile__btn--open svg .a.bottom {
-    bottom: 0;
+.menuMobile__btn span:nth-child(3) {
+    opacity: 0;
+}
+.menuMobile__btn span:nth-child(4) {
+    top: 80%;
 }
 
-
+.menuMobile__open .menuMobile__btn span:nth-child(2) {
+    transform: translate(0, -50%) rotate(-45deg);
+}
+.menuMobile__open .menuMobile__btn span:nth-child(3) {
+    opacity: 1;
+    transform: translate(0, -50%) rotate(45deg);
+}
+.menuMobile__open .menuMobile__btn span:nth-child(1),
+.menuMobile__open .menuMobile__btn span:nth-child(4) {
+    transform: translate(0, -50%) scaleX(0);
+}
 
 .menuMobile {
     position: fixed;
@@ -138,11 +174,12 @@ a {
     width: 100vw;
     height: calc(100vh - 5rem);
     z-index: -1;
-    background: #ccc;
+    background: #FFF;
     transition: all .4s ease-in-out;
+    border-top: 1px solid #e7e7e7;
 }
 
-.menuMobile--open {
+.menuMobile__open .menuMobile {
     right: 0%;
 }
 
@@ -169,17 +206,20 @@ a {
 }
 
 .pepitos__slide {
-    width: 80%;
     padding: 0 5rem;
 }
 
 .pepitos__slide h2 {
+    width: 100%;
+    max-width: 1000px;
     font-size: 3.5rem;
     color: var(--primary);
     margin-bottom: 1rem;
 }
 
 .pepitos__slide p {
+    width: 100%;
+    max-width: 1000px;
     font-size: 1.3rem;
 }
 
@@ -689,7 +729,25 @@ a {
     }
 
     .header__menu {
-        display: none;
+        position: absolute;
+        top: 8rem;
+        right: -105%;
+        opacity: 0;
+        pointer-events: none;
+        transition: all .3s;
+    }
+
+    .header__menu ul {
+        flex-direction: column;
+        align-items: flex-end;
+    }
+    .header__menu li {
+        margin-bottom: 1rem;
+    }
+
+    .header__menu a {
+        font-size: 2rem;
+
     }
 
     .menuMobile__btn {
@@ -713,6 +771,12 @@ a {
         width: 28px;
     }
 
+    .menuMobile__open .header__menu {
+        pointer-events: all;
+        opacity: 1;
+        right: 1rem;
+    }
+
     .pepitos {
     }
 
@@ -728,6 +792,11 @@ a {
     .pepitos__slide p {
         font-size: 1rem;
         margin-bottom: 4rem;
+    }
+
+    .pepitos .swiper-button-prev,
+    .pepitos .swiper-button-next {
+        top: 76%;
     }
 
     .filters__wrapper {
@@ -780,9 +849,6 @@ a {
     .footer__contact a {
         justify-content: center;
     }
-
-
-
 
 }
 

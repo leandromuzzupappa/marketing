@@ -4,6 +4,8 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="theme-color" content="#4834d4" />
+
         <title>Marketing</title>
 
         <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -13,8 +15,14 @@
             rel="stylesheet"
         />
 
+        <link
+            rel="stylesheet"
+            href="https://unpkg.com/swiper/swiper-bundle.min.css"
+        />
+
         <link rel="stylesheet" href="./assets/css/styles.css" />
 
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
         <script src="./assets/scripts/app.js" defer></script>
     </head>
 
@@ -22,10 +30,12 @@
         <header class="header">
             <div class="header__wrapper">
                 <div class="header__logo">
-                    <h1>
-                        Marke
-                        <span>ting</span>
-                    </h1>
+                    <a href="/">
+                        <h1>
+                            Marke
+                            <span>ting</span>
+                        </h1>
+                    </a>
                 </div>
                 <nav class="header__menu">
                     <ul>
@@ -105,40 +115,65 @@
                         </li>
                         <li>
                             <a href="#" class="menuMobile__btn">
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    viewBox="0 0 30 21"
-                                >
-                                    <g transform="translate(-3 -7.5)">
-                                        <path class="a top" d="M4.5,9h27" />
-                                        <path class="a mid" d="M4.5,18h27" />
-                                        <path class="a mid2" d="M4.5,18h27" />
-                                        <path class="a bottom" d="M4.5,27h27" />
-                                    </g>
-                                </svg>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
                             </a>
                         </li>
                     </ul>
                 </div>
-                <div class="menuMobile">
-                    <h2>Pruebita</h2>
-                </div>
+                <div class="menuMobile"></div>
             </div>
         </header>
 
         <main>
-            <section class="pepitos">
-                <div class="pepitos__slide">
-                    <h2>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    </h2>
-                    <p>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing
-                        elit. Aliquam, veritatis pariatur tenetur vel quod
-                        laboriosam excepturi impedit id sequi minus quaerat quae
-                    </p>
-                    <a href="#"> Inicio </a>
+            <section class="pepitos swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="pepitos__slide swiper-slide">
+                        <h2>
+                            1 Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit.
+                        </h2>
+                        <p>
+                            Lorem ipsum dolor sit, amet consectetur adipisicing
+                            elit. Aliquam, veritatis pariatur tenetur vel quod
+                            laboriosam excepturi impedit id sequi minus quaerat
+                            quae
+                        </p>
+                        <a href="#"> Inicio </a>
+                    </div>
+
+                    <div class="pepitos__slide swiper-slide">
+                        <h2>
+                            2 Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit.
+                        </h2>
+                        <p>
+                            Lorem ipsum dolor sit, amet consectetur adipisicing
+                            elit. Aliquam, veritatis pariatur tenetur vel quod
+                            laboriosam excepturi impedit id sequi minus quaerat
+                            quae
+                        </p>
+                        <a href="#"> Inicio </a>
+                    </div>
+
+                    <div class="pepitos__slide swiper-slide">
+                        <h2>
+                            3 Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit.
+                        </h2>
+                        <p>
+                            Lorem ipsum dolor sit, amet consectetur adipisicing
+                            elit. Aliquam, veritatis pariatur tenetur vel quod
+                            laboriosam excepturi impedit id sequi minus quaerat
+                            quae
+                        </p>
+                        <a href="#"> Inicio </a>
+                    </div>
                 </div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
             </section>
 
             <section id="services" class="services">
