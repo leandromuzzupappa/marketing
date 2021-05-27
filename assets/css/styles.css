@@ -101,6 +101,49 @@ a {
 
 .menuMobile__btn {
     display: none;
+    position: relative;
+}
+
+.menuMobile__btn svg {
+    border: 1px solid green;
+    width: 30px;
+    height: 30px;
+}
+.menuMobile__btn g{
+    width: 30px;
+    height: 30px;
+}
+
+.menuMobile__btn svg .a {
+    position: absolute;
+    transition: all .4s;
+    stroke: red;
+    top: 50%;
+    left: 0;
+}
+
+.menuMobile__btn.menuMobile__btn--open svg .a.top {
+    top: 0;
+}
+.menuMobile__btn.menuMobile__btn--open svg .a.bottom {
+    bottom: 0;
+}
+
+
+
+.menuMobile {
+    position: fixed;
+    top: 5rem;
+    right: -105%;
+    width: 100vw;
+    height: calc(100vh - 5rem);
+    z-index: -1;
+    background: #ccc;
+    transition: all .4s ease-in-out;
+}
+
+.menuMobile--open {
+    right: 0%;
 }
 
 .pepitos {
